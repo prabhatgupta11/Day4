@@ -15,6 +15,8 @@ const fetchJokes = async (searchTerm) => {
   }
 };
 
+//for display the random joke 
+
 const displayRandomJoke = (jokes) => {
   if (jokes.length > 0) {
     const randomJoke = jokes[Math.floor(Math.random() * jokes.length)].joke;
@@ -28,6 +30,8 @@ const displayRandomJoke = (jokes) => {
   }
 };
 
+//save joke to the file
+
 const saveJokeToFile = (joke) => {
   if (joke) {
     fs.appendFile('jokes.txt', `\n${joke}\n`, (err) => {
@@ -39,6 +43,8 @@ const saveJokeToFile = (joke) => {
     });
   }
 };
+
+//display leaderboard
 
 const displayLeaderboard = () => {
   fs.readFile('jokes.txt', 'utf8', (err, data) => {
@@ -58,6 +64,7 @@ const displayLeaderboard = () => {
   });
 };
 
+// get popular joke
 const getMostPopularJoke = (jokesArray) => {
   const jokeCounts = {};
   jokesArray.forEach(joke => {
