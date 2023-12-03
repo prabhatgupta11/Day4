@@ -1,4 +1,3 @@
-
 # Joke Fetcher App
 
 A simple Node.js application that fetches jokes from the [icanhazdadjoke API](https://icanhazdadjoke.com/) based on search terms, displays a random joke, and allows users to save jokes to a file. It also features a leaderboard to showcase the most popular jokes among saved ones.
