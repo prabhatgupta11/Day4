@@ -51,6 +51,7 @@ const displayLeaderboard = () => {
     if (err) {
       console.error('Error reading jokes file:', err);
     } else {
+    
       const jokesArray = data.split('\n').filter(joke => joke.trim() !== '');
       if (jokesArray.length > 0) {
         const mostPopularJoke = getMostPopularJoke(jokesArray);
@@ -70,8 +71,8 @@ const getMostPopularJoke = (jokesArray) => {
   jokesArray.forEach(joke => {
     jokeCounts[joke] = (jokeCounts[joke] || 0) + 1;
   });
-
   const sortedJokes = Object.keys(jokeCounts).sort((a, b) => jokeCounts[b] - jokeCounts[a]);
+
   return sortedJokes[0];
 };
 
